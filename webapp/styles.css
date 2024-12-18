@@ -1,69 +1,101 @@
-body{
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
     background-image: url("ghosts.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-}
-main{
-    margin-top: 30px;
-    margin-bottom: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 2px black solid;
-    padding: 10px 10px 10px 10px;
-    height: 600px;
-    width: 610px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: whitesmoke;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border-radius: 10px;
+    background-attachment: fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.scroll_main{
-    height: auto;
-    width: auto;
-    background-color: transparent;
-    overflow-y: scroll;
-}
-div{
-    margin: 10px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background-color: white;
-    height: 150px;
-    width: 400px;
-    justify-content: center;
-    align-items:flex-start;
+main {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: whitesmoke;
+    border: 2px solid black;
     border-radius: 10px;
+    padding: 10px;
+    overflow-y: auto;
 }
-.main_container{
+
+#tdspng {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.main_container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     border: 5px double red;
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 160px;
-    width: 400px;
-    gap: 20px;
-    
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 450px;
 }
 
-img{
-    margin: 5px 5px 5px 5px;
-    height: 150px;
-    width: 130px;
+.main_container img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 15px;
 }
-label{
-    font-size: larger;
+
+.main_container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+label {
+    font-size: 16px;
     font-weight: 600;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    text-align: left;
 }
-#tdspng{
-    height: 200px;
-    width:600px;
-    margin: 5px 5px 5px 5px;
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 480px) {
+    main {
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .main_container {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .main_container img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .main_container > div {
+        width: 100%;
+        align-items: center;
+    }
+
+    label {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    #tdspng {
+        max-height: 150px;
+    }
 }
